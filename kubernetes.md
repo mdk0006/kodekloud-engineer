@@ -23,3 +23,34 @@ Creating NameSpace
 Create a Pod under the newly created namespace
 
 `kubectl run dev-nginx-pod --image=nginx:latest --namespace dev`
+
+# _*Lab4*_
+
+## Setting the resource limit on the objects
+
+For this we will create a yaml like this copied from Kubernetes Documentation
+
+```
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd-pod
+spec:
+  containers:
+  - name: httpd-container
+    image: httpd:latest
+    resources:
+      requests:
+        memory: "15Mi"
+        cpu: "100m"
+      limits:
+        memory: "20Mi"
+        cpu: "100m"
+```
+
+then run
+
+```
+kubectl apply -f <file_name.yaml>
+```
