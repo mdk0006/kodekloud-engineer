@@ -36,3 +36,13 @@ Give permissions to the script
 Run the script
 `./addgroup.sh`
 Now the script will ask for the password of user for executing each line on the remote server
+
+# **_Lab3 _**
+
+## Create a user on remote server without an interactive shell
+
+As it is on remote I am using the SSH command for my convenience
+`ssh banner@stapp03 -t 'sudo useradd -s /sbin/nologin mark'`
+
+To check if its added or not
+`ssh user@<remote-ip> -t 'grep 'mark' /etc/passwd'`
