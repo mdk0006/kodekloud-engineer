@@ -6,3 +6,6 @@
 You need to ensure that you have the sudo privileges
 To check if the user is created or not
 `cat /etc/passwd`
+### Extra Point 
+*You can check the logged in user info using*
+`who` or `w` command in bash
