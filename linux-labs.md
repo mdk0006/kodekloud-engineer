@@ -73,3 +73,19 @@ To check if its added or not
 ```
 ssh user@<remote-ip> -t 'grep 'mark' /etc/passwd'
 ```
+
+# **_Lab 4_**
+
+## Creating a user without a home
+
+```
+ssh -t banner@stapp03 'sudo useradd --no-create-home <user_name>'
+```
+
+# **_Lab5_**
+
+## Creating a user with expiry
+
+```
+ssh -t tony@stapp01 'sudo useradd john -e 2021-01-28'
+```

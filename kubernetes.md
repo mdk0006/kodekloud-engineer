@@ -54,3 +54,57 @@ then run
 ```
 kubectl apply -f <file_name.yaml>
 ```
+
+# **_Lab5_**
+
+## Rolling Updates in Kubernetes
+
+In this you have to be sure about the container name for the deployment for which you want to update the image
+
+```
+kubectl set image deployment nginx-deployment nginx-container=nginx:1.9.1
+```
+
+Here
+
+```
+kubectl set image deployment <name_of_the_deployment> <name_of_the_container>=<image_you_want_to_update>
+```
+
+# **_Lab 6_**
+
+## Rollback Deployment in Kubernetes
+
+To the previous version
+
+```
+kubectl rollout undo deployment nginx-deployment
+```
+
+# **_Lab 7_**
+
+## Create a ReplicaSet in Kubernetes
+
+```
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: gcr.io/google_samples/gb-frontend:v3
+```
