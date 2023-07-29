@@ -108,3 +108,57 @@ spec:
       - name: php-redis
         image: gcr.io/google_samples/gb-frontend:v3
 ```
+
+# **_Lab8_**
+
+## Creating CronJob in Kubernetes
+
+```
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox:1.28
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
+
+```
+
+[Cronjob](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/)
+
+# **_Lab 9_**
+
+## Creating a CountDown Timer in Kubernetes
+
+```
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: countdown-datacenter
+spec:
+  template:
+    metadata:
+      name: countdown-datacenter
+    spec:
+      containers:
+      - name: container-countdown-datacenter
+        image: debian:latest
+        command: ["sleep","5"]
+      restartPolicy: Never
+```
+
+Point: Need to name template as countdown-datacenter
+
+[Creating Job In Kuberentes](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
