@@ -1,3 +1,6 @@
+**Solution To All**
+[Github](https://github.com/MederD/Kodekloud-Engineer-Tasks/blob/main/Tasks/Fix_Issue_with_VolumeMounts_in_Kubernetes.md)
+
 # _*Lab1*_
 
 ## First Lab Create A Pod With Specific Label and Container Name
@@ -250,3 +253,41 @@ kubectl edit service <service_name>
 [Service Types](https://kubernetes.io/docs/concepts/services-networking/service/)
 [Service Differences](https://medium.com/devops-mojo/kubernetes-service-types-overview-introduction-to-k8s-service-types-what-are-types-of-kubernetes-services-ea6db72c3f8c)
 [Pavan Article](https://medium.com/@pavanbelagatti/kubernetes-service-types-explained-2709cde3bc0c#:~:text=There%20are%20four%20types%20of,NodePort%2C%20LoadBalancer%2C%20and%20Ingress.)
+
+# **_Lab13_**
+
+# Creating Replication Controller in K8's
+
+```
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginx
+spec:
+  replicas: 3
+  selector:
+    app: nginx_app
+    type: front-end
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx_app
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+```
+
+KeyPoint: Labels and Selectors should be same
+
+[ReplicationController](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/)
+
+# **_Lab14_**
+
+# Troubleshooting Volume Mount in Kubernetes
+
+[Kubectl cp](https://www.middlewareinventory.com/blog/kubectl-cp-example/)
