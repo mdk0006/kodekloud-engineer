@@ -162,3 +162,50 @@ spec:
 Point: Need to name template as countdown-datacenter
 
 [Creating Job In Kuberentes](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
+
+# **_Lab 10 _**
+
+## Creating a time check pod in Kuberentes
+
+`configmap.yaml`
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: time-config
+  namespace: xfusion
+data:
+  "TIME_FREQ": "7"
+```
+
+Pod with empty directory using the config map
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: time-check
+  namespace: xfusion
+spec:
+  containers:
+  - image: busybox:latest
+    name: time-check
+    command: [ "sh", "-c", "while true; do date; sleep $TIME_FREQ;done >> /opt/itadmin/time/time-check.log" ]
+    volumeMounts:
+    - mountPath: /opt/itadmin/time
+      name: log-volume
+    env:
+     - name: TIME_FREQ
+       valueFrom:
+           configMapKeyRef:
+            name: time-config         # The ConfigMap this value comes from.
+            key: TIME_FREQ # The key to fetch.
+
+  volumes:
+  - name: log-volume
+    emptyDir: {}
+  restartPolicy: Never
+```
+
+We created a namespace and then created a configmap then we created a pod with volume which uses the config map and run command
