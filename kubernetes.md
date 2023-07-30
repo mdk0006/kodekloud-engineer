@@ -209,3 +209,6 @@ spec:
 ```
 
 We created a namespace and then created a configmap then we created a pod with volume which uses the config map and run command
+
+[ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/)
+[Pod with Empty Dir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir)
