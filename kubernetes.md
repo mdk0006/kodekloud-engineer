@@ -212,3 +212,41 @@ We created a namespace and then created a configmap then we created a pod with v
 
 [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/)
 [Pod with Empty Dir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir)
+
+# **_Lab 11_**
+
+# Troubleshooting Issues With Pods
+
+The image name was not correct
+
+We used the command
+
+```
+kubectl edit pod <name_of_pod>
+```
+
+If it is the element which needs pod to be destroyed you can apply forcefully which will delete
+and make new one
+
+```
+kubectl apply --force -f <path_to_file>
+```
+
+# **_Lab12_**
+
+# Update Existing Deployment in Kubernetes
+
+In this we need to update the Deployment Image Replicas and Service Port
+
+```
+kubectl edit deployment <deployment_name>
+```
+
+```
+kubectl edit service <service_name>
+```
+
+[Service In Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
+[Service Types](https://kubernetes.io/docs/concepts/services-networking/service/)
+[Service Differences](https://medium.com/devops-mojo/kubernetes-service-types-overview-introduction-to-k8s-service-types-what-are-types-of-kubernetes-services-ea6db72c3f8c)
+[Pavan Article](https://medium.com/@pavanbelagatti/kubernetes-service-types-explained-2709cde3bc0c#:~:text=There%20are%20four%20types%20of,NodePort%2C%20LoadBalancer%2C%20and%20Ingress.)
