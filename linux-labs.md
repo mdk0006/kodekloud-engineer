@@ -89,3 +89,11 @@ ssh -t banner@stapp03 'sudo useradd --no-create-home <user_name>'
 ```
 ssh -t tony@stapp01 'sudo useradd john -e 2021-01-28'
 ```
+
+# **_Lab 6 _**
+
+# Copying file for the specific user to the directory
+
+```
+find /home/usersdata/ -type f -user yousuf -exec cp --parents {} /media \;
+```
