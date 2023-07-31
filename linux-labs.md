@@ -92,8 +92,39 @@ ssh -t tony@stapp01 'sudo useradd john -e 2021-01-28'
 
 # **_Lab 6 _**
 
-# Copying file for the specific user to the directory
+## Copying file for the specific user to the directory
 
 ```
 find /home/usersdata/ -type f -user yousuf -exec cp --parents {} /media \;
+```
+
+# **_Lab7_**
+
+## Disable Root Login
+
+We need to disable root login
+
+To prevent for the keys
+
+```
+sshpass -p  '********' ssh -o StrictHostKeyChecking=no tony@172.16.238.10
+sudo su -
+```
+
+Go to
+
+```
+vi /etc/ssh/sshd_config
+```
+
+Search for Permit Root Login
+
+:/PermitRootLogin
+
+Change from yes to no
+
+```
+systemctl enable sshd
+systemctcl restart sshd
+systemcctl status sshd
 ```
