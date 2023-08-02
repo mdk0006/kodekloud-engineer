@@ -128,3 +128,41 @@ systemctl enable sshd
 systemctcl restart sshd
 systemcctl status sshd
 ```
+# *** Lab 8 *** 
+## Linux Archives
+
+```
+tar -czvf jim.tar.gz /data/jim 
+```
+
+Explanation
+tar: tar stands for "tape archive," and it is a command-line tool used in Unix-based systems to create and manipulate archive files.
+
+-c: This flag tells tar to create a new archive.
+
+-z: This flag is used to enable gzip compression, which compresses the archive to reduce its size.
+
+-v: This flag enables the verbose mode, which displays the files being processed during the archiving process. It will show the progress and the list of files being added to the archive.
+
+-f: This flag indicates that the following argument (jim.tar.gz) specifies the output file for the archive. The -f flag is used to specify the filename of the archive.
+
+jim.tar.gz: This is the name of the output archive file. In this case, it is jim.tar.gz. The .tar.gz extension indicates that it is a compressed archive using gzip compression.
+
+/data/jim: This is the path to the directory that you want to include in the archive. In this example, it is /data/jim.
+
+When you run this command, tar will create a new archive named jim.tar.gz that contains all the files and directories inside the /data/jim directory. The files will be compressed using gzip compression, resulting in the final jim.tar.gz file. The command will display the progress and the list of files being added to the archive due to the -v flag.
+
+
+*** Lab 9 *** 
+# File Permissions
+```
+chmod +x <file>
+```
+
+
+*** facl ***
+
+
+
+
+//get code for p
