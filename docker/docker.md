@@ -58,4 +58,17 @@ each line of the dockerfile creates a new layer
 All other layers other than top most layers are readable only
 [DockerFile Explained](https://techiescamp.com/topic/dockerfile-explained/)
 [EntryPoint vs CMD](https://devopscube.com/run-scripts-docker-arguments/)
+[Docker Multistage Docker](https://techiescamp.com/topic/docker-multistage-build/)
+When we use multistage the size of the image can be reduced
+[Methods to optimize the size of Docker Image](https://techiescamp.com/topic/optimize-docker-image/)
+1: Use the minimal base image
+2: Use multistage builds
+3: Minimize the number of layers
+4: Keep application data else where
+5: Use Docker caching by planning the Docker File commands
+6: Use DockerIgnore and avoid nested file structures
+[Using HereDoc Within Dockerfile](https://techiescamp.com/topic/using-heredoc-with-dockerfile/)
+[ENTRYPOINT VS CMD](https://techiescamp.com/topic/entrypoint-vs-cmd/)
+[Docker File Best Practices](https://techiescamp.com/topic/dockerfile-best-practices/)
 
+## Done till Docker Projects
