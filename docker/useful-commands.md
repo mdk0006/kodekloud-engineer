@@ -29,3 +29,5 @@ docker system prune -a --volumes
 ```
 docker stop $(docker ps -q)
 ```
+
+## Keep the docker container running for the debug

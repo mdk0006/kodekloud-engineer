@@ -52,7 +52,9 @@ sudo usermod -aG docker $USER
 changing the config of the current login user add to to
 -a to append
 -G for specifying the groups
-
+[Why to use docker](https://techiescamp.com/topic/why-to-use-docker/)
+[Docker Core Architecture](https://techiescamp.com/topic/docker-core-architecture/)
+[How Docker Works](https://techiescamp.com/topic/how-does-docker-work/)
 DockerFile
 each line of the dockerfile creates a new layer
 All other layers other than top most layers are readable only
@@ -71,4 +73,33 @@ When we use multistage the size of the image can be reduced
 [ENTRYPOINT VS CMD](https://techiescamp.com/topic/entrypoint-vs-cmd/)
 [Docker File Best Practices](https://techiescamp.com/topic/dockerfile-best-practices/)
 
-## Done till Docker Projects
+# Running Custom Shell Scripts In Docker
+
+[Shell Scripts](https://techiescamp.com/topic/running-custom-shell-scripts-in-docker/)
+[Keep Docker Container Running](https://techiescamp.com/topic/keep-docker-container-running-for-debugging/)
+[Docker in Docker Container](https://techiescamp.com/topic/run-docker-in-docker-container/)
+
+_It is recommended to treat containers as immutable objects, and it is not recommended to make changes to a running container. Any changes made to a running container should only be for testing purposes._
+
+# Lab 6
+
+## Pulling and tagging the image
+
+```
+docker image pull <image_name>
+docker image tag <name_of_old_image_with_tag> <name_of_image:with_new_tag>
+```
+
+# Lab 7
+
+## Docker Permissions for the user
+
+```
+sudo usermod -aG docker <rose>
+```
+
+to check the user groups on the linux server
+
+```
+cat /etc/group
+```
