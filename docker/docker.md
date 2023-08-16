@@ -103,3 +103,13 @@ to check the user groups on the linux server
 ```
 cat /etc/group
 ```
+
+# _ Lab 8 _
+
+## Creating image from the running container
+
+### Command
+
+```
+docker commit -a "<Message you want to type>" <name_of_the_running_container> <name_for_the_image>
+```

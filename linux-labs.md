@@ -128,11 +128,13 @@ systemctl enable sshd
 systemctcl restart sshd
 systemcctl status sshd
 ```
-# *** Lab 8 *** 
+
+# **_ Lab 8 _**
+
 ## Linux Archives
 
 ```
-tar -czvf jim.tar.gz /data/jim 
+tar -czvf jim.tar.gz /data/jim
 ```
 
 Explanation
@@ -152,17 +154,29 @@ jim.tar.gz: This is the name of the output archive file. In this case, it is jim
 
 When you run this command, tar will create a new archive named jim.tar.gz that contains all the files and directories inside the /data/jim directory. The files will be compressed using gzip compression, resulting in the final jim.tar.gz file. The command will display the progress and the list of files being added to the archive due to the -v flag.
 
+# **_ Lab 9 _**
 
-*** Lab 9 *** 
 # File Permissions
+
 ```
 chmod +x <file>
 ```
 
+**_ facl _**
 
-*** facl ***
+# Lab 10
 
+## String Substitue in Linux
 
+```
+sed -i "s/About/Echo-Location/g" nautilus.xml
 
+```
 
-//get code for p
+# Lab 11
+
+## SCP Command
+
+```
+scp /tmp/nautilus.txt.gpg tony@stapp01:/home/webapp
+```
